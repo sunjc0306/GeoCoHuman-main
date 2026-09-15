@@ -4,7 +4,21 @@
 
 PyTorch implementation and reproduction of **GeoCoHuman**, a framework for reconstructing a detailed 3D clothed human from a single RGB image by combining parametric-body and point-cloud geometry priors.
 
-> **Paper:** [GeoCoHuman: Single-View 3D Clothed Human Reconstruction via Complementary Geometry Priors](https://doi.org/10.1109/TVCG.2026.3717809)  
+> **Paper:** [GeoCoHuman: Single-View 3D Clothed Human Reconstruction via Complementary Geometry Priors](https://doi.org/10.1109/TVCG.2026.3717809
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        )  
 > **Authors:** Jianchi Sun, Fei Luo, Xiangqian Shen, and Chunxia Xiao  
 > **Journal:** IEEE Transactions on Visualization and Computer Graphics, 2026
 
@@ -25,19 +39,11 @@ This repository contains the three principal components described in the paper:
 │   ├── default.json              # Paper-scale PMDM configuration
 │   ├── geocohuman.json           # Paper-scale PFA/CPIF configuration
 ├── scripts/
-│   ├── build_oriented_pointcloud.py
-│   ├── prepare_implicit_sample.py
-│   ├── generate_dummy_dataset.py
-│   └── generate_dummy_implicit_dataset.py
 ├── src/
 │   ├── human_depth_diffusion/    # PMDM, DDPM/DDIM, data, losses, and metrics
 │   └── geocohuman/               # Geometry, PFA, Hourglass, CPIF, and ICON adapter
 ├── train.py                      # PMDM training
-├── infer.py                      # Front/back depth inference
-├── evaluate.py                   # PMDM depth evaluation
 ├── train_cpif.py                 # PFA/CPIF training
-├── reconstruct_mesh.py           # Dense SDF query and Marching Cubes
-└── tests/                        # Unit and integration tests
 ```
 
 ## Installation
