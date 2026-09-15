@@ -1,0 +1,46 @@
+{
+  "data": {
+    "train_manifest": "data/train.json",
+    "val_manifest": "data/val.json",
+    "image_height": 512,
+    "image_width": 512,
+    "max_depth_m": 5.0,
+    "png_depth_scale": 1000.0,
+    "num_workers": 4,
+    "horizontal_flip": 0.5
+  },
+  "model": {
+    "base_channels": 64,
+    "time_dim": 256,
+    "dropout": 0.1,
+    "condition_dropout": 0.0,
+    "depth_feature_channels": [32, 64, 128]
+  },
+  "diffusion": {
+    "timesteps": 1000,
+    "beta_schedule": "linear",
+    "prediction_type": "epsilon",
+    "sampling_method": "ddim",
+    "sampling_steps": 25,
+    "ddim_eta": 0.0,
+    "guidance_scale": 1.0,
+    "depth_l1_weight": 1.0,
+    "gradient_weight": 0.5
+  },
+  "train": {
+    "output_dir": "runs/human_depth_ddpm",
+    "batch_size": 4,
+    "epochs": 1000,
+    "optimizer": "adam",
+    "learning_rate": 0.00003,
+    "weight_decay": 0.0,
+    "gradient_accumulation": 1,
+    "gradient_clip": 1.0,
+    "ema_decay": 0.9999,
+    "amp": true,
+    "seed": 42,
+    "log_every": 20,
+    "save_every": 5,
+    "val_every": 1
+  }
+}

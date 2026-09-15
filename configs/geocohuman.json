@@ -1,0 +1,51 @@
+{
+  "data": {
+    "train_manifest": "data/implicit/train.json",
+    "val_manifest": "data/implicit/val.json",
+    "image_height": 512,
+    "image_width": 512,
+    "num_queries": 2048,
+    "num_prior_points": 40000,
+    "face_rings": 2,
+    "max_face_neighbors": 32,
+    "num_workers": 4
+  },
+  "model": {
+    "image_feature_dim": 64,
+    "image_encoder_width": 128,
+    "image_stacks": 4,
+    "image_hourglass_depth": 3,
+    "smpl_semantic_dim": 3,
+    "body_aggregate_dim": 64,
+    "clothes_aggregate_dim": 64,
+    "pfa_hidden_dim": 128,
+    "point_radius": 0.2,
+    "point_max_neighbors": 32,
+    "prior_hidden_dims": [512, 256, 128, 128],
+    "latent_hidden_dims": [512, 256, 128, 128],
+    "skip_layers": [1, 2, 3]
+  },
+  "loss": {
+    "occupancy_weight": 1.0,
+    "sdf_weight": 1.0,
+    "normal_weight": 1.0,
+    "positive_balance": 0.5,
+    "normal_mode": "finite_difference",
+    "normal_epsilon": 0.001,
+    "recompute_nearest_for_normals": false
+  },
+  "train": {
+    "output_dir": "runs/geocohuman_cpif",
+    "batch_size": 1,
+    "epochs": 10,
+    "learning_rate": 0.0001,
+    "optimizer": "rmsprop",
+    "lr_milestones": [4, 8],
+    "lr_gamma": 0.1,
+    "weight_decay": 0.0,
+    "gradient_clip": 1.0,
+    "seed": 42,
+    "save_every": 1
+  }
+}
+
